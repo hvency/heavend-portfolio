@@ -130,8 +130,8 @@
                        </a>
 
                   <a href="#contact" class="secondary-btn">
-    ✉️ Let's Connect
-</a>
+                  ✉️ Let's Connect
+                 </a>
 
                 </div>
 
@@ -745,43 +745,113 @@
 
             <div class="contact-right">
 
-                <h3>Quick Message</h3>
+               <h3>Quick Message</h3>
 
-                <form>
+               <form id="contact-form">
 
-                    <input type="text" placeholder="Your Name">
-                    <input type="email" placeholder="Your Email">
-                    <textarea placeholder="Your Message"></textarea>
+              <input
+            type="text"
+            name="from_name"
+            placeholder="Your Name"
+            required
+             >
 
-                    <button type="submit">Send Message</button>
+              <input
+            type="email"
+            name="from_email"
+            placeholder="Your Email"
+            required
+                >
 
-                </form>
+             <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+              ></textarea>
+
+             <button type="submit" id="sendBtn">
+            Send Message
+              </button>
+
+            </form>
 
             </div>
 
         </div>
 
-        <!-- FOOTER NOTE -->
-        <div class="contact-footer">
+               <!-- FOOTER NOTE -->
+              <div class="contact-footer">
 
-    <p>
+              <p>
         Built by Heaven Desiree Balbon using HTML, CSS, and JavaScript as a personal healthcare operations portfolio.
-    </p>
+             </p>
 
-    <span class="built-note">
+              <span class="built-note">
     Crafted with care — from scratch
-</span>
+           </span>
 
-</div>
+         </div>
 
     </div>
 
-</section>
-    <script src="script.js"></script>
+        </section>
+         <script src="script.js"></script>
 
-</body>
+          <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-</html>
+           <script>
+
+emailjs.init({
+    publicKey: "dhaBWdur04A0Xg9UV"
+});
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const button = document.getElementById("sendBtn");
+
+    button.innerHTML = "Sending...";
+    button.disabled = true;
+
+    emailjs.sendForm(
+        "service_4835g3f",
+        "template_vzc1x5p",
+        this
+    )
+
+    .then(() => {
+
+        alert("✅ Message sent successfully!");
+
+        form.reset();
+
+    })
+
+    .catch((error) => {
+
+        console.error(error);
+
+        alert("❌ Failed to send message. Please try again.");
+
+    })
+
+    .finally(() => {
+
+        button.innerHTML = "Send Message";
+        button.disabled = false;
+
+    });
+
+});
+
+</script>
+
+         </body>
+
+        </html>
 <script>
 const reveals = document.querySelectorAll('.reveal');
 
