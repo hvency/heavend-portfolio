@@ -4736,21 +4736,3 @@ p{
 }
 
 }
-html,
-body{
-    overflow-x:hidden;
-    width:100%;
-}
-
-img{
-    max-width:100%;
-    height:auto;
-}
-
-iframe{
-    max-width:100%;
-}
-
-*{
-    box-sizing:border-box;
-}
