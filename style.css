@@ -3338,11 +3338,19 @@ padding:28px;
 
 .hero-container{
 
+    display:grid;
+
     grid-template-columns:1fr;
+
+    justify-items:center;
+
+    align-items:center;
 
     gap:60px;
 
     text-align:center;
+
+    padding-top:100px;
 
 }
 
@@ -3351,6 +3359,16 @@ padding:28px;
 .hero-content{
 
     order:1;
+
+    width:100%;
+
+    max-width:700px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
 
 }
 
@@ -3452,13 +3470,13 @@ padding:28px;
 
     order:2;
 
+    width:100%;
+
     display:flex;
 
     justify-content:center;
 
     align-items:center;
-
-    width:100%;
 
 }
 
